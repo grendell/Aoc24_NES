@@ -31,7 +31,7 @@ DISTANCE_LEN = INPUT_LEN + 4
 
 .segment "RODATA"
 input_start:
-.include "1.input"
+.include "../inputs/1.input"
 input_end:
 
 .include "system.inc"

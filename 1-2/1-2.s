@@ -25,7 +25,7 @@ SCORE_LEN = 11 ; 1000 * 1000 * 99999
 
 .segment "RODATA"
 input_start:
-.include "1.input"
+.include "../inputs/1.input"
 input_end:
 
 .include "system.inc"

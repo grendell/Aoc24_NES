@@ -10,7 +10,7 @@ OBJ = obj
 $(OBJ):
 	mkdir $(OBJ)
 
-$(OBJ)/1-1.o: 1-1.s 1.input chars.inc nrom.cfg
+$(OBJ)/1-1.o: 1-1.s ../inputs/1.input chars.inc nrom.cfg
 	$(AS) $(AS_FLAGS) 1-1.s -o $(OBJ)/1-1.o
 
 .PHONY: clean
