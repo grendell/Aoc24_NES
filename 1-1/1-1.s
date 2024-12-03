@@ -25,12 +25,13 @@ DISTANCE_LEN = INPUT_LEN + 4
   last_left: .res INPUT_LEN
   last_right: .res INPUT_LEN
 
-  distance: .res DISTANCE_LEN
+  padded_distance: .res DISTANCE_LEN - INPUT_LEN
+  distance: .res INPUT_LEN
   total_distance: .res DISTANCE_LEN
 
 .segment "RODATA"
 input_start:
-.include "1-1.input"
+.include "1.input"
 input_end:
 
 .include "system.inc"
@@ -166,7 +167,7 @@ left_minus_right:
   clc
 
 @store:
-  sta distance + (DISTANCE_LEN - INPUT_LEN), y
+  sta distance, y
 
   dey
   bpl :-
@@ -185,7 +186,7 @@ right_minus_left:
   clc
 
 @store:
-  sta distance + (DISTANCE_LEN - INPUT_LEN), y
+  sta distance, y
 
   dey
   bpl :-
@@ -195,7 +196,7 @@ right_minus_left:
 add_to_total:
   clc
   ldy #DISTANCE_LEN - 1
-: lda distance, y
+: lda padded_distance, y
   adc total_distance, y
   cmp #10
   bcc @store
