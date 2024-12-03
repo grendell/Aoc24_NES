@@ -1,0 +1,6 @@
+.asciiz "3   4"
+.asciiz "4   3"
+.asciiz "2   5"
+.asciiz "1   3"
+.asciiz "3   9"
+.asciiz "3   3"
