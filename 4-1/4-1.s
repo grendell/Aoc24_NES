@@ -286,7 +286,7 @@ done:
   rts
 
   ; pos_y >= search_len - 1 => continue
-  lda pos_y
+: lda pos_y
   cmp #SEARCH_LEN - 1
   bcs :+
 
